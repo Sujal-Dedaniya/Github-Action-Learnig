@@ -1,0 +1,28 @@
+name: Test GITHUB_ENV
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set variable
+        run: |
+          echo "MY_NAME=Sujal" >> $GITHUB_ENV
+
+      - name: Direct access
+        run: |
+          echo "Hello $MY_NAME"
+
+      - name: Using env block
+        env:
+          USER_NAME: ${{ env.MY_NAME }}
+        run: |
+          echo "Mapped name is $USER_NAME"
+
+      - name: YAML usage
+        run: |
+          echo "Final check: ${{ env.MY_NAME }}"
