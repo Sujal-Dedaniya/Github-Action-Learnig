@@ -8,8 +8,8 @@ jobs:
     runs-on: ubuntu-latest
 
     # 👇 Job-level output (IMPORTANT)
-    # outputs:
-    #   username: ${{ steps.set-data.outputs.name }}
+    outputs:
+      username: ${{ steps.set-data.outputs.name }}
 
     steps:
       - name: Generate data
@@ -28,11 +28,11 @@ jobs:
           echo "From ENV: $NAME"
           echo "From Step Output: ${{ steps.set-data.outputs.name }}"
 
-  # consumer:
-  #   runs-on: ubuntu-latest
-  #   needs: producer
+  consumer:
+    runs-on: ubuntu-latest
+    needs: producer
 
-  #   steps:
-  #     - name: Use data from producer
-  #       run: |
-  #         echo "Received from producer: ${{ needs.producer.outputs.username }}"
+    steps:
+      - name: Use data from producer
+        run: |
+          echo "Received from producer: ${{ needs.producer.outputs.username }}"
