@@ -3,7 +3,7 @@ name: Triggering Events
 
 on:
   ### https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows#push
-  push:
+  # push:
     branches:
       # Filter patterns cheat sheet:
       #   https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet
