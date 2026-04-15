@@ -7,7 +7,7 @@ jobs:
   producer:
     runs-on: ubuntu-latest
 
-    # 👇 Job-level output (IMPORTANT)
+    # Job-level output (IMPORTANT)
     outputs:
       username: ${{ steps.set-data.outputs.name }}
 
