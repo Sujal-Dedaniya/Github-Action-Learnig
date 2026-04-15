@@ -1,7 +1,7 @@
 name: Test GITHUB_ENV
 
 on:
-  push:
+  # push:
   workflow_dispatch:
 
 jobs:
