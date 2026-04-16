@@ -1,8 +1,7 @@
 name: OIDC Demo - Create S3
 
 on:
-  push:
-    branches: [ "main" ]
+  workflow_dispatch: 
 
 permissions:
   id-token: write   # REQUIRED for OIDC
