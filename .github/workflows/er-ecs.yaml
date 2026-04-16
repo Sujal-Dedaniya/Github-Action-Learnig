@@ -1,4 +1,4 @@
-name: Push Image to ECR
+name: ESR-TO-ECS
 
 on:
   workflow_dispatch:
